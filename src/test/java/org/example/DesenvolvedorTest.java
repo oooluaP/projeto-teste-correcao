@@ -37,7 +37,7 @@ class DesenvolvedorTest {
         boolean duplicadoMaiusculo = dev.adicionarProjeto("SISTEMA FINANCEIRO");
         boolean duplicadoMinusculo = dev.adicionarProjeto("sistema financeiro");
 
-        assertTrue(primeiroAdd, "O primeiro projeto deve ser adicionado com sucesso");
+        assertTrue(primeiroAdd, "O primeiro projeto foi adicionado com sucesso");
         assertFalse(duplicadoMaiusculo, "Não deve permitir duplicata com letras maiúsculas");
         assertFalse(duplicadoMinusculo, "Não deve permitir duplicata com letras minúsculas");
 
