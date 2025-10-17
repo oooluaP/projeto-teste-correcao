@@ -16,7 +16,7 @@ class DesenvolvedorTest {
     @Test
     void getNivelBaseadoEmExperiencia_deveRetornarPlenoQuandoEntreTresECinco() {
         Desenvolvedor f3 = new Desenvolvedor("Tamara",3);
-        Desenvolvedor f5 = new Desenvolvedor("Leonidas",5);
+        Desenvolvedor f5 = new Desenvolvedor("Leonidas",4);
 
         assertEquals("Pleno", f3.getNivelBaseadoEmExperiencia());
         assertEquals("Pleno", f5.getNivelBaseadoEmExperiencia());
