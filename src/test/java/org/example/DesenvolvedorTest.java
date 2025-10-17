@@ -1,46 +1,35 @@
 package org.example;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DesenvolvedorTest {
 
-    @org.junit.jupiter.api.Test
-    void getNivelBaseadoEmExperiencia() {
+    @Test
+    void getNivelBaseadoEmExperiencia_deveRetornarJuniorQuandoMenorOuIgualADois() {
+        Desenvolvedor f1 = new Desenvolvedor("Fábio",1);
+        Desenvolvedor f2 = new Desenvolvedor("Ferdinando",2);
+
+        assertEquals("Júnior", f1.getNivelBaseadoEmExperiencia());
+        assertEquals("Júnior", f2.getNivelBaseadoEmExperiencia());
     }
 
-    @org.junit.jupiter.api.Test
-    void adicionarProjeto() {
+    @Test
+    void getNivelBaseadoEmExperiencia_deveRetornarPlenoQuandoEntreTresECinco() {
+        Desenvolvedor f3 = new Desenvolvedor("Tamara",3);
+        Desenvolvedor f5 = new Desenvolvedor("Leonidas",5);
+
+        assertEquals("Pleno", f3.getNivelBaseadoEmExperiencia());
+        assertEquals("Pleno", f5.getNivelBaseadoEmExperiencia());
     }
 
-    @org.junit.jupiter.api.Test
-    void removerProjeto() {
-    }
+    @Test
+    void getNivelBaseadoEmExperiencia_deveRetornarSeniorQuandoMaiorQueCinco() {
+        Desenvolvedor f6 = new Desenvolvedor("Huysla",6);
 
-    @org.junit.jupiter.api.Test
-    void calcularHorasPorProjeto() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getProjetos() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getNome() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setNome() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getNivel() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void setNivel() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void getAnosDeExperiencia() {
+        assertEquals("Sênior", f6.getNivelBaseadoEmExperiencia());
     }
 }
+
+
+
+

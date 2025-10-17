@@ -9,7 +9,7 @@ public class Desenvolvedor {
     private final int anosDeExperiencia;
     private final List<String> projetos;
 
-    public Desenvolvedor(String nome, String nivel, int anosDeExperiencia) {
+    public Desenvolvedor(String nome, int anosDeExperiencia) {
         this.nome = nome;
         this.nivel = nivel;
         this.anosDeExperiencia = anosDeExperiencia;
@@ -17,12 +17,12 @@ public class Desenvolvedor {
     }
 
     public String getNivelBaseadoEmExperiencia() {
-        if (anosDeExperiencia > 5) {
-            return "Pleno";
-        } else if (anosDeExperiencia > 2) {
-            return "Sênior";
-        } else {
+        if (anosDeExperiencia <= 2) {
             return "Júnior";
+        } else if (anosDeExperiencia <= 5) {
+            return "Pleno";
+        } else {
+            return "Sênior";
         }
     }
 
