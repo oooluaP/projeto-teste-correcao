@@ -29,10 +29,9 @@ public class Desenvolvedor {
     public boolean adicionarProjeto(String nomeProjeto) {
         for (String projetoExistente : projetos) {
             if (projetoExistente.equalsIgnoreCase(nomeProjeto)) {
-
+                return false;
             }
         }
-
         projetos.add(nomeProjeto);
         return true;
     }

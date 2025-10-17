@@ -28,6 +28,22 @@ class DesenvolvedorTest {
 
         assertEquals("Sênior", f6.getNivelBaseadoEmExperiencia());
     }
+
+    @Test
+    void adicionarProjeto_deveImpedirInclusaoDeProjetosDuplicadosCaseInsensitive() {
+        Desenvolvedor dev = new Desenvolvedor("Ana",4);
+
+        boolean primeiroAdd = dev.adicionarProjeto("Sistema Financeiro");
+        boolean duplicadoMaiusculo = dev.adicionarProjeto("SISTEMA FINANCEIRO");
+        boolean duplicadoMinusculo = dev.adicionarProjeto("sistema financeiro");
+
+        assertTrue(primeiroAdd, "O primeiro projeto deve ser adicionado com sucesso");
+        assertFalse(duplicadoMaiusculo, "Não deve permitir duplicata com letras maiúsculas");
+        assertFalse(duplicadoMinusculo, "Não deve permitir duplicata com letras minúsculas");
+
+        assertEquals(1, dev.getProjetos().size(), "Deve haver apenas um projeto na lista");
+    }
+
 }
 
 
